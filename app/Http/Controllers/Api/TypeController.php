@@ -40,11 +40,12 @@ class TypeController extends Controller
     {
         $type->load([
             'projects' => function (Builder $query) {
-                $query->with('technologies')->orderBy('updated_at', 'desc')->limit(4)
+                $query->with('technologies')->orderBy('updated_at', 'desc')->limit(4);
             }
         ]);
         return response()->json([
             'type'=> $type,
+        
         ]);
     }
 

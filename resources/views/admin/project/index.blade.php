@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="py-5">
+    <section class="py-5 index-section">
         <div class="container">
             <div class="row">
                 <div class="col-12 py-5">
@@ -26,13 +26,14 @@
                                         </ul>
                                     </li>
                                
-                                    <li><a class="btn btn-sm btn-primary" href="{{route('admin.project.edit',$project)}}">Edit</a></li>
+                                    <li class="btn-wrapper">
+                                        <a class="btn btn-sm btn-primary" href="{{route('admin.project.edit',$project)}}">Edit</a>
 
-                                    <li>
-                                        <form action="{{route('admin.project.destroy',$project)}}" method="POST">
+                                    
+                                        <form class="margin-left-auto" action="{{route('admin.project.destroy',$project)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="btn btn-danger">Delete</button>
+                                            <button class="btn btn-sm btn-danger">Delete</button>
                                         </form>
                                     </li>
                                 </ul>
