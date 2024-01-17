@@ -4,8 +4,8 @@
     <section class="py-5 index-section">
         <div class="container">
             <div class="row">
-                <div class="col-12 py-5">
-                    <h1 class="title">I tuoi progetti</h1>
+                <div class="col-12 py-5 text-center">
+                    <h1 class="title pb-2">I tuoi progetti</h1>
                     <a href="{{route('admin.project.create')}}" class="btn btn-success">Aggiungi progetto</a>
                 </div>
                 @forelse ($projects as $project)
@@ -13,10 +13,10 @@
                         <a href="{{route('admin.project.show',$project->id)}}">
 
                             <div class="card">
-                                <h5 class="card-title">{{$project->name}}</h5>
+                                <h5 class="card-title project-title">{{$project->name}}</h5>
                                 <ul>
                                     {{-- <li>{{$project->name}}</li> --}}
-                                    <li>{{isset($project->type) ? $project->type->name : '-'}}</li>
+                                    <li class="project-subtitle">{{isset($project->type) ? $project->type->name : '-'}}</li>
                                     <li>
                                         <ul>
                                             @foreach ($project->technologies as $technology)

@@ -25,7 +25,7 @@ img{
     padding: 16px;
     background-color: #D2B48C;
     margin: 20px;
-    width: 100%;
+    max-height: 100%;
     .btn-wrapper{
         margin-top: 10px;
         display: flex;
@@ -36,4 +36,17 @@ img{
        }
     }
 
+}
+.title{
+    font-weight: 700;
+    font-size: 32px;
+}
+.project-title{
+    font-weight: 700;
+    font-size: 24px;
+}
+.project-subtitle{
+    color: #333333;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
