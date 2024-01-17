@@ -28,13 +28,13 @@ class UserSeeder extends Seeder
             'password' => Hash::make('ciaomamma'),
         ]);
      
-        for ($i=0; $i < 20; $i++) { 
-            $user = User::create([
-                'name' => $faker->name(),
-                'email' => $faker->email(),
-                'password' => Hash::make($faker->password()),
-            ]);
-        }
+        // for ($i=0; $i < 20; $i++) { 
+        //     $user = User::create([
+        //         'name' => $faker->name(),
+        //         'email' => $faker->email(),
+        //         'password' => Hash::make($faker->password()),
+        //     ]);
+        // }
         // possiamo generare tot utenti finti 
     }
 }

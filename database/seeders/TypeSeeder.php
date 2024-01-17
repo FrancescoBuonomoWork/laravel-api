@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Type;
+use illuminate\support\Str;
 
 class TypeSeeder extends Seeder
 {
@@ -23,6 +24,7 @@ class TypeSeeder extends Seeder
         
         $new_type = new Type();
         $new_type->name = $type;
+        $new_type->slug = Str::slug($new_type->name,'-');
         $new_type->save();  
         }
     }
