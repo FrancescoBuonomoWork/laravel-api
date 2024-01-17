@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule as ValidationRule;
 use App\Models\Type;
 use App\Models\Technology;
+use illuminate\support\Str;
 
 class ProjectController extends Controller
 {
@@ -41,18 +42,22 @@ class ProjectController extends Controller
     {
         $valid = $request->validate([
             'name' => 'required|max:255|string|unique:projects',
-            'slug' => 'required|max:255|string|unique:projects',
+            'slug' => 'unique:projects',
             'type_id' => 'nullable|exists:types,id',
             'technologies.*' => 'exists:technologies,id',
             'image' => 'nullable|image|max:255',
         ]);
 
         $data = $request->all();
-
+        // aggiungiamo lo slug 
+        $data['slug']= Str::slug($data['name'], '-');
         // logica per recuperare l immagine 
-        $imagePath = Storage::put('uploads', $request->image);
+        if($request->image){
+            $imagePath = Storage::put('uploads', $request->image);
+    
+            $data['image'] = $imagePath;
 
-        $data['image'] = $imagePath;
+        }
 
         //fine lofica per recuperare l immagine
 

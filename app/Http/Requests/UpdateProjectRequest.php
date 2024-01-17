@@ -25,7 +25,7 @@ class UpdateProjectRequest extends FormRequest
     {
         return [
             'name' => ['required','max:255','string'],
-            'slug' => ['required','max:255','string'],
+            'slug' => ['max:255','string'],
             'type_id' => 'nullable|exists:types,id',
             'technologies.*' => 'exists:technologies,id',
             'image'=> 'nullable|image|max:255',
