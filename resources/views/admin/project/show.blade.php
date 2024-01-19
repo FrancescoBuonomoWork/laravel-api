@@ -3,7 +3,7 @@
 @section('content')
 
 
-    <section>
+    <section class="py-5 section">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -17,7 +17,7 @@
                     <ul class="d-flex gap-2">
                         @foreach ($project->technologies as $technology)
                         
-                        <li class="badge rounded-pill text-bg-primary">{{$technology->name }}</li>
+                        <li class="badge rounded-pill text-bg-dark-gray">{{$technology->name }}</li>
                         @endforeach
                     </ul>
                     

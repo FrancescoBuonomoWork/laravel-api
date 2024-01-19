@@ -48,10 +48,10 @@
                             <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
                         </li>
                     </ul>
-
+                    {{-- bottone vedi progetti  --}}
                     <div>
                         
-                        <a class="btn btn-success my-4" href="{{route('admin.project.index')}}">Vedi progetti</a>
+                        <a class="btn btn-light-gray my-4" href="{{route('admin.project.index')}}">Vedi progetti</a>
                     </div>
 
                     <!-- Right Side Of Navbar -->

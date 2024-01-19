@@ -2,7 +2,7 @@
 
 @section('content')
     
-<section>
+<section class="py-5 section">
     <div class="container">
         <div class="row">
             <div class="col">
